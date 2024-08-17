@@ -54,15 +54,18 @@ body {
     background-color: cornflowerblue;
     border-radius: 8px;
     border-style: none;
-    opacity: 0.6;
+    opacity: 0.5;
     font-family: inherit;
     font-size: 23px;
 }
 
 .btn:hover {
-    opacity: 0.5;
+    opacity: 0.4;
 }
 
+.btn:active {
+    background-color: aliceblue;
+}
 .zero{
     width: 168px;
 }
