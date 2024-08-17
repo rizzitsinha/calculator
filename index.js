@@ -12,7 +12,7 @@ function divide(a, b){
     return a / b;
 }
 
-// function that calls on an operator function and two operands
+// Function that calls on an operator function and two operands
 function operate(firstOperand, secondOperand, operator){
     return operator(firstOperand, secondOperand);
 }
@@ -29,16 +29,15 @@ let displayValue;
 digitButtons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
         let num = e.target.id;
-        console.log(num);
         text += num;
         display.textContent = text;
         displayValue = +text;
-        console.log(displayValue)
+        console.log(`I'm the current displayValue: ${displayValue}`)
         
     })
 })
 
-// Storing value of first operand and operator
+// Storing value of first operand and second operand
 let firstOperand;
 let secondOperand;
 let operator;
@@ -48,17 +47,28 @@ const operatorButtons = document.querySelectorAll(".operator-btn");
 
 operatorButtons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
+        if(firstOperand){
+            firstOperand = equating();
+        }
+        else{
+            firstOperand = displayValue;
+        }
         operator = e.target.id;
-        firstOperand = displayValue;
         text = "";
     })
 })
 
-// Performing operation
+// Performing equality operation
 
 const equalityButton = document.querySelector(".equality-btn");
 
 equalityButton.addEventListener(`click`, () => {
+    equating();
+    clear();
+})
+
+// Function to equate
+function equating(){
     secondOperand = displayValue;
     text = "";
 
@@ -66,15 +76,16 @@ equalityButton.addEventListener(`click`, () => {
         case '+':
             let sum = add(firstOperand, secondOperand);
             display.textContent = sum;
-            break;
+            console.log(`I'm the current sum: ${sum}`);
+            return sum;
         case '-':
             let difference = subtract(firstOperand, secondOperand);
             display.textContent = difference;
-            break;
+            return difference;
         case '*':
             let product = multiply(firstOperand, secondOperand);
             display.textContent = product;
-            break;
+            return product;
         case '/':
             if(secondOperand === 0){
                 display.textContent = "SIN!";
@@ -82,21 +93,25 @@ equalityButton.addEventListener(`click`, () => {
             }
             let quotient = divide(firstOperand, secondOperand);
             display.textContent = quotient;
-            break;
+            return quotient;
     
         default:
             break;
     }
-})
+
+}
 
 
 // Giving functionality to the clear button
 const clearButton = document.querySelector(".clear-btn");
-
 clearButton.addEventListener('click', () => {
+    clear();
+    display.textContent = "";
+})
+// Function to clear
+function clear() {
     firstOperand = null;
     secondOperand = null;
     operator = null;
     text = "";
-    display.textContent = "";
-})
+}
