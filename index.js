@@ -73,7 +73,7 @@ backspace.addEventListener('click', () => {
     displayValue = +text;
 })
 
-// Storing value of first operand and second operand
+// Storing value of first operand and second operand and perfrorming semi-operation
 let firstOperand;
 let secondOperand;
 let operator;
@@ -102,7 +102,6 @@ equalityButton.addEventListener(`click`, () => {
     equating();
     clear();
 })
-
 // Function to equate
 function equating(){
     secondOperand = displayValue;
@@ -166,3 +165,142 @@ function clear() {
     operator = null;
     text = "";
 }
+
+// Keyboard support
+
+document.addEventListener('keydown', (e) => {
+    console.log(e.key)
+    switch (e.key) {
+        case '1':
+            text += e.key;
+            display.textContent = text;
+            displayValue = +text;
+            break;
+        case '2':
+            text += e.key;
+            display.textContent = text;
+            displayValue = +text;
+            break;
+        case '3':
+            text += e.key;
+            display.textContent = text;
+            displayValue = +text;
+            break;
+        case '4':
+            text += e.key;
+            display.textContent = text;
+            displayValue = +text;
+            break;
+        case '5':
+            text += e.key;
+            display.textContent = text;
+            displayValue = +text;
+            break;
+        case '6':
+            text += e.key;
+            display.textContent = text;
+            displayValue = +text;
+            break;
+        case '7':
+            text += e.key;
+            display.textContent = text;
+            displayValue = +text;
+            break;
+        case '8':
+            text += e.key;
+            display.textContent = text;
+            displayValue = +text;
+            break;
+        case '9':
+            text += e.key;
+            display.textContent = text;
+            displayValue = +text;
+            break;
+        case '0':
+            text += e.key;
+            display.textContent = text;
+            displayValue = +text;
+            break;
+        case '=':
+            equating();
+            clear();
+            break;
+        case 'Enter':
+            equating();
+            clear();
+            break;
+        case 'Backspace':
+            text = text.toString()
+            let textArr = text.split("");
+            textArr.pop();
+            text = textArr.join("");
+            display.textContent = text;
+            displayValue = +text;
+            break;
+
+        case 'c':
+            clear();
+            display.textContent = "";
+            break;
+
+        case '.':
+            if(!text.includes('.')){
+                text += '.';
+                display.textContent = text;
+                displayValue = +text;
+                console.log(`I'm the current displayValue: ${displayValue}`)
+            }
+            break;
+        
+        case 't':
+            text = display.textContent;
+            text *= -1;
+            display.textContent = text;
+            displayValue = +text;
+            break;
+
+        case '+':
+            if(firstOperand){
+                firstOperand = equating();
+            }
+            else{
+                firstOperand = displayValue;
+            }
+            operator = '+';
+            text = "";
+            break;
+        case '-':
+            if(firstOperand){
+                firstOperand = equating();
+            }
+            else{
+                firstOperand = displayValue;
+            }
+            operator = '-';
+            text = "";
+            break;
+        case '*':
+            if(firstOperand){
+                firstOperand = equating();
+            }
+            else{
+                firstOperand = displayValue;
+            }
+            operator = '*';
+            text = "";
+            break;
+        case '/':
+            if(firstOperand){
+                firstOperand = equating();
+            }
+            else{
+                firstOperand = displayValue;
+            }
+            operator = '/';
+            text = "";
+            break;
+
+        default:
+            break;
+    }
+})
