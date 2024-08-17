@@ -61,6 +61,18 @@ toggleSignButton.addEventListener(`click`, () => {
     displayValue = +text;
 })
 
+// Giving functionality to backspace button
+const backspace = document.querySelector('.backspace');
+
+backspace.addEventListener('click', () => {
+    text = text.toString()
+    let textArr = text.split("");
+    textArr.pop();
+    text = textArr.join("");
+    display.textContent = text;
+    displayValue = +text;
+})
+
 // Storing value of first operand and second operand
 let firstOperand;
 let secondOperand;
