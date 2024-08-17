@@ -37,6 +37,20 @@ digitButtons.forEach((btn) => {
     })
 })
 
+// Adding functinality to decimal-point button
+const decimalPointButton = document.querySelector(".decimal-point-btn");
+
+decimalPointButton.addEventListener('click', () => {
+    console.log('decimal was clicked')
+    if(!text.includes('.')){
+        text += '.';
+        display.textContent = text;
+        displayValue = +text;
+        console.log(`I'm the current displayValue: ${displayValue}`)
+
+    }
+})
+
 // Storing value of first operand and second operand
 let firstOperand;
 let secondOperand;
