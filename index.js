@@ -51,6 +51,16 @@ decimalPointButton.addEventListener('click', () => {
     }
 })
 
+// Giving functionality to toggle sign button
+const toggleSignButton = document.querySelector(`.toggle-sign-btn`);
+
+toggleSignButton.addEventListener(`click`, () => {
+    text = display.textContent;
+    text *= -1;
+    display.textContent = text;
+    displayValue = +text;
+})
+
 // Storing value of first operand and second operand
 let firstOperand;
 let secondOperand;
