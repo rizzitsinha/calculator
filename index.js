@@ -75,23 +75,38 @@ function equating(){
     switch (operator) {
         case '+':
             let sum = add(firstOperand, secondOperand);
+            if(!Number.isInteger(sum)){
+                sum = sum.toFixed(2);
+            }
             display.textContent = sum;
             console.log(`I'm the current sum: ${sum}`);
             return sum;
+
         case '-':
             let difference = subtract(firstOperand, secondOperand);
+            if(!Number.isInteger(difference)){
+                difference = difference.toFixed(2);
+            }
             display.textContent = difference;
             return difference;
+
         case '*':
             let product = multiply(firstOperand, secondOperand);
+            if(!Number.isInteger(product)){
+                product = product.toFixed(2);
+            }
             display.textContent = product;
             return product;
+
         case '/':
             if(secondOperand === 0){
                 display.textContent = "SIN!";
                 break;
             }
             let quotient = divide(firstOperand, secondOperand);
+            if(!Number.isInteger(quotient)){
+                quotient = quotient.toFixed(2);
+            }
             display.textContent = quotient;
             return quotient;
     
