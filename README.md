@@ -35,5 +35,5 @@ Project to create a calculator using HTML, CSS and Vanilla JS.
 
 ## Author
 
-Rishit Sinha
+Rishit Sinha  
 Github: [rizzitsinha](https://github.com/rizzitsinha)
