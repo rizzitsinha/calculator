@@ -1,3 +1,4 @@
+// Functions for basic operations
 function add(a, b){
     return a + b;
 }
@@ -11,14 +12,13 @@ function divide(a, b){
     return a / b;
 }
 
-let firstOperand;
-let secondOperand;
-let operator;
-
+// function that calls on an operator function and two operands
 function operate(firstOperand, secondOperand, operator){
     return operator(firstOperand, secondOperand);
 }
 
+
+// Giving functionality to digit buttons and adding the digits to the display and the variable displayValue
 const digitButtons = document.querySelectorAll(".digit-btn");
 const display = document.querySelector(".display-value");
 
@@ -34,7 +34,58 @@ digitButtons.forEach((btn) => {
         display.textContent = text;
         displayValue = +text;
         console.log(displayValue)
-
+        
     })
+})
+
+// Storing value of first operand and operator
+let firstOperand;
+let secondOperand;
+let operator;
+
+
+const operatorButtons = document.querySelectorAll(".operator-btn");
+
+operatorButtons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+        operator = e.target.id;
+        firstOperand = displayValue;
+        text = "";
+    })
+})
+
+// Performing operation
+
+const equalityButton = document.querySelector(".equality-btn");
+
+equalityButton.addEventListener(`click`, () => {
+    secondOperand = displayValue;
+    text = "";
+
+    switch (operator) {
+        case '+':
+            let sum = add(firstOperand, secondOperand);
+            display.textContent = sum;
+            break;
+        case '-':
+            let difference = subtract(firstOperand, secondOperand);
+            display.textContent = difference;
+            break;
+        case '*':
+            let product = multiply(firstOperand, secondOperand);
+            display.textContent = product;
+            break;
+        case '/':
+            if(secondOperand === 0){
+                display.textContent = "SIN!";
+                break;
+            }
+            let quotient = divide(firstOperand, secondOperand);
+            display.textContent = quotient;
+            break;
+    
+        default:
+            break;
+    }
 })
 
