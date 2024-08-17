@@ -10,12 +10,63 @@ html {
     box-sizing: inherit;
 }
 
+body {
+    background-color: antiquewhite;
+}
+#flex-container{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
 .display {
     background-color: aliceblue;
     display: flex;
     justify-content: end;
     align-items: center;
-    width: 200px;
-    height: 25px;
+    width: 354px;
+    height: 80px;
     border: blanchedalmond 1px solid;
+    margin: 8px 1px;
+    border-radius: 3px;
+    opacity: 0.9;
+}
+
+.container {
+    background-color: cornflowerblue;
+    background-image: linear-gradient(45deg, purple, rgb(62, 62, 219));
+    display: block;
+    margin: auto;
+    padding: 5px;
+    width: 366px;
+    border: black 1px solid;
+    border-radius: 10px;
+}
+
+.layer {
+    display: flex;
+}
+
+.btn {
+    height: 80px;
+    width: 80px;
+    margin: 4px;
+    background-color: cornflowerblue;
+    border-radius: 8px;
+    border-style: none;
+    opacity: 0.6;
+    font-family: inherit;
+    font-size: 23px;
+}
+
+.btn:hover {
+    opacity: 0.5;
+}
+
+.zero{
+    width: 168px;
+}
+
+body{
+    font-size: 3rem;
 }

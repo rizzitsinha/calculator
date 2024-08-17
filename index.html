@@ -8,50 +8,65 @@
     <script src="./index.js" defer></script>
 </head>
 <body>
-    <div class="container-calculator">
-        <div class="display">
-            <p class="display-value"></p>
+    <div id="flex-container">
+    <div class="container">
+
+        <div class="layer-1 layer">
+            <div class="display">
+                <p class="display-value"></p>
+            </div>
         </div>
         
-        <div class="clear">
-            <button class="clear-btn">Clear</button>
+        <div class="layer-2 layer">
+            <div class="clear">
+                <button class="clear-btn btn">AC</button>
+            </div>
+
+            <div class="toggle-sign">
+                <button class="toggle-sign-btn btn">+/-</button>
+            </div>
+
+            <div class="backspace">
+                <button class="backspace-btn btn">←</button>
+            </div>
+            
+            <button class="operator-btn btn" id="/">/</button>
         </div>
 
-        <div class="digits">
-            <button class="digit-btn btn" id="1">1</button>
-            <button class="digit-btn btn" id="2">2</button>
-            <button class="digit-btn btn" id="3">3</button>
-            <button class="digit-btn btn" id="4">4</button>
-            <button class="digit-btn btn" id="5">5</button>
-            <button class="digit-btn btn" id="6">6</button>
+        <div class="layer-3 layer">
             <button class="digit-btn btn" id="7">7</button>
             <button class="digit-btn btn" id="8">8</button>
             <button class="digit-btn btn" id="9">9</button>
-            <button class="digit-btn btn" id="0">0</button>
-        </div>
-
-        <div class="operators">
-            <button class="operator-btn btn" id="+">+</button>
-            <button class="operator-btn btn" id="-">-</button>
             <button class="operator-btn btn" id="*">*</button>
-            <button class="operator-btn btn" id="/">/</button>
         </div>
         
-        <div class="decimal-point">
-            <button class="decimal-point-btn btn">.</button>
+        <div class="layer-4 layer">
+            <button class="digit-btn btn" id="4">4</button>
+            <button class="digit-btn btn" id="5">5</button>
+            <button class="digit-btn btn" id="6">6</button>
+            <button class="operator-btn btn" id="-">-</button>
         </div>
 
-        <div class="toggle-sign">
-            <button class="toggle-sign-btn btn">+/-</button>
+        <div class="layer-5 layer">
+            <button class="digit-btn btn" id="1">1</button>
+            <button class="digit-btn btn" id="2">2</button>
+            <button class="digit-btn btn" id="3">3</button>
+            <button class="operator-btn btn" id="+">+</button>
         </div>
 
-        <div class="backspace">
-            <button class="backspace-btn btn">←</button>
+        <div class="layer-6 layer">
+            <button class="digit-btn btn zero" id="0">0</button>
+
+            <div class="decimal-point">
+                <button class="decimal-point-btn btn">.</button>
+            </div>
+
+            <div class="equality">
+                <button class="equality-btn btn">=</button>
+            </div>
         </div>
 
-        <div class="equality">
-            <button class="equality-btn btn">=</button>
-        </div>
+    </div>
     </div>
 </body>
 </html>
