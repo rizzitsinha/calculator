@@ -1,4 +1,4 @@
-# calculator
+# Calculator
 Project to create a calculator using HTML, CSS and Vanilla JS.  
 
 🔗 **Live preview:** [here](https://rizzitsinha.github.io/calculator/)
