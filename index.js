@@ -89,3 +89,14 @@ equalityButton.addEventListener(`click`, () => {
     }
 })
 
+
+// Giving functionality to the clear button
+const clearButton = document.querySelector(".clear-btn");
+
+clearButton.addEventListener('click', () => {
+    firstOperand = null;
+    secondOperand = null;
+    operator = null;
+    text = "";
+    display.textContent = "";
+})
