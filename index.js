@@ -83,11 +83,12 @@ const operatorButtons = document.querySelectorAll(".operator-btn");
 
 operatorButtons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
+        // Setting value of firstOperand
         if(firstOperand){
             firstOperand = equating();
         }
         else{
-            firstOperand = displayValue;
+            firstOperand = +display.textContent;
         }
         operator = e.target.id;
         text = "";
